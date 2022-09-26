@@ -14,11 +14,17 @@ public class Delta {
   }
 
   public void getRoots() {
-    double x1 = (-this.b + Math.pow(this.getDelta(), 0.5)) / (2 * this.a);
-    double x2 = (-this.b - Math.pow(this.getDelta(), 0.5)) / (2 * this.a);
+    if (this.getDelta() < 0) {
+      System.out.println("Não existe raízes reais");
+    } else if (this.getDelta() == 0) {
+      double x = (-this.b + Math.pow(this.getDelta(), 0.5)) / (2 * this.a);
+      System.out.println("S = {" + x + "}");
+    } else {
+      double x1 = (-this.b + Math.pow(this.getDelta(), 0.5)) / (2 * this.a);
+      double x2 = (-this.b - Math.pow(this.getDelta(), 0.5)) / (2 * this.a);
 
-    DecimalFormat df = new DecimalFormat("0.000");
-
-    System.out.println("S = {" + df.format(x1) + ";" + df.format(x2) + "}");
+      DecimalFormat df = new DecimalFormat("0.000");
+      System.out.println("S = {" + df.format(x1) + ";" + df.format(x2) + "}");
+    }
   }
 }

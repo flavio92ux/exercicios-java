@@ -3,9 +3,8 @@
 
 public class App {
     public static void main(String[] args) throws Exception {
-        Delta delta = new Delta(1, 4, 1);
+        Delta delta = new Delta(1, 4, 4);
 
         delta.getRoots();
-
     }
 }
